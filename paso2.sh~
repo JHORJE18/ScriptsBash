@@ -1,0 +1,24 @@
+
+valido=0
+
+while [ $valido -eq 0 ]; do
+    echo 'Introduce un número mayor que 0'
+    read numero
+    
+    if [ $numero -gt 0 ]; then
+	#Posible par
+	valido=1
+	resto=$numero % 2
+
+	echo 'El resultado de la division es: ' $resto
+	
+	if [ $resto -gt 0 ]; then
+	    echo 'El numero' $numero 'es par'
+	else
+	    echo 'El numero' $numero 'no es par'
+	fi
+    else
+	echo 'El número' $numero ' no es válido'
+    fi
+
+done

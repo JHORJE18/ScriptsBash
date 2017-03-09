@@ -1,0 +1,28 @@
+#Suma y media
+valido=0
+
+while [ $valido -eq 0 ]; do
+    echo 'Introduce un dia de la semana entre 1 y 30'
+    read numero
+
+    if [ $numero -ge 1 ] && [ $numero -le 30 ]; then
+	#Numero valido
+	valido=1
+    fi
+done
+
+#Miramos que este en la semana
+semana=0
+
+while [ $semana -eq 0 ]; do
+    if [ $numero -le 7 ]; then
+	semana=1
+	echo 'Numero '$numero ' valido'
+    else
+	numero=`expr $numero - 7`
+	semana=1
+	echo 'restadno ' $numero
+    fi
+done
+
+echo $numero

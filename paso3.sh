@@ -1,0 +1,36 @@
+#NOTAS
+
+valido=0
+
+while [ $valido -eq 0 ]; do
+    echo 'Introduce la nota'
+    read nota
+    
+    if [ $nota -ge 0 ] && [ $nota -le 10 ]; then
+	#Nota valida
+	valido=1
+	
+	if [ $nota -lt 5 ]; then
+	    echo 'Has suspendido con un ' $nota
+	else 
+	    if [ $nota -eq 5 ]; then
+		echo 'Has aprobado con un ' $nota
+	    else 
+		if [ $nota -le 7 ]; then 
+		    echo 'Has sacado un bien con un ' $nota
+		else 
+		    if [ $nota -le 9 ]; then
+			echo 'Has sacado un sobresaliente con un ' $nota
+		    else
+			if [ $nota -eq 10 ]; then
+			    echo 'Enhorabuena, has sacado un fantastico ' $nota ', sobresaliente'
+			    fi
+			fi
+		    fi
+		fi
+	    fi
+    else
+	echo 'La nota ' $nota ' no es valida'
+    fi
+
+done
